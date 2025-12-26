@@ -1,0 +1,3 @@
+llm_env/
+chroma_db/
+.env
