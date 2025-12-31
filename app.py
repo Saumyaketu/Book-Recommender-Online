@@ -37,6 +37,7 @@ def recommend_books(query, category, tone):
 
     recs = db_books.similarity_search(query, k=50)
     books_list = [int(rec.metadata["isbn"]) for rec in recs]
+    book_recs = books[books["isbn13"].isin(books_list)]
 
     # Filter by Category
     if category and category != "All":
